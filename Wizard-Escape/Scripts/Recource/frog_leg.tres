@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bonqnlu2t6v0v"]
+
+[ext_resource type="Texture2D" uid="uid://dks5i0yr8am8c" path="res://UI/frog_leg.png" id="1_mu36n"]
+[ext_resource type="Script" uid="uid://6bkuldrancag" path="res://Scripts/item_data.gd" id="1_y1nvc"]
+[ext_resource type="Texture2D" uid="uid://dg5fdpdteuccp" path="res://Meshes/textures/skladnik_zabia_nozka.png" id="2_wxvxa"]
+[ext_resource type="ArrayMesh" uid="uid://c5ia02eyob4ow" path="res://Meshes/frog_leg.obj" id="2_yhikc"]
+
+[resource]
+script = ExtResource("1_y1nvc")
+item_name = "Frog_leg"
+icon = ExtResource("1_mu36n")
+mesh = ExtResource("2_yhikc")
+material = ExtResource("2_wxvxa")
+metadata/_custom_type_script = "uid://6bkuldrancag"

@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://cv6t14uohxbbp"]
+
+[ext_resource type="Texture2D" uid="uid://b2fvo635cd0cs" path="res://UI/main_menu.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://4xvnc5rc3jsi" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bhrbibonfvpp1" path="res://UI/logo.png" id="2_1ehe0"]
+[ext_resource type="BitMap" uid="uid://buwqjftjvj0mf" path="res://UI/buttonBitmap.png" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cq5ablxowrd5s" path="res://UI/button2.png" id="4_16hvj"]
+[ext_resource type="Texture2D" uid="uid://danm1vsdvnhbi" path="res://UI/button.png" id="4_trj04"]
+[ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="6_opfnp"]
+[ext_resource type="AudioStream" uid="uid://b71pvi0j4yutr" path="res://Audio/main_menu_theme.wav" id="7_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://dxis1txvvdoh6" path="res://Audio/SFX_UI_Menu_EnterGame_01.wav" id="8_yhxw7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
+texture = ExtResource("1_28flt")
+modulate_color = Color(0.17176259, 0.14506295, 0.14160743, 1)
+
+[node name="MainMenu" type="Control" unique_id=682734391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ce3w2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1141803948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n45e2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1395683698]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_right = 382.0
+offset_bottom = 877.0
+grow_horizontal = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer2" unique_id=2028705338]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 90
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/MarginContainer4" unique_id=725809507]
+layout_mode = 2
+texture = ExtResource("2_1ehe0")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=1434011669]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=211372606]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer" unique_id=1884114275]
+layout_mode = 2
+texture_normal = ExtResource("4_16hvj")
+texture_pressed = ExtResource("4_16hvj")
+texture_hover = ExtResource("4_trj04")
+texture_click_mask = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer/PlayButton" unique_id=1243182863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_opfnp")
+theme_override_font_sizes/font_size = 45
+text = "PLAY"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=299643560]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer2" unique_id=84568535]
+layout_mode = 2
+texture_normal = ExtResource("4_16hvj")
+texture_pressed = ExtResource("4_16hvj")
+texture_hover = ExtResource("4_trj04")
+texture_click_mask = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer2/SettingsButton" unique_id=368319698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_opfnp")
+theme_override_font_sizes/font_size = 45
+text = "SETTINGS"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=545650147]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer3" unique_id=2041126626]
+layout_mode = 2
+texture_normal = ExtResource("4_16hvj")
+texture_pressed = ExtResource("4_16hvj")
+texture_hover = ExtResource("4_trj04")
+texture_click_mask = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer3/QuitButton" unique_id=2115701557]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_opfnp")
+theme_override_font_sizes/font_size = 45
+text = "QUIT"
+
+[node name="MainMenuTheme" type="AudioStreamPlayer" parent="." unique_id=1606573012]
+stream = ExtResource("7_cp0ys")
+bus = &"Music"
+
+[node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=1807228654]
+stream = ExtResource("8_yhxw7")
+bus = &"SoundFx"
+
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer3/QuitButton" to="." method="_on_quit_button_pressed"]

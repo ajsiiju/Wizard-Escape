@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bn42nsxkaig2v"]
+
+[ext_resource type="Script" uid="uid://6bkuldrancag" path="res://Scripts/item_data.gd" id="1_fqqj4"]
+[ext_resource type="Texture2D" uid="uid://ca0s8xdg600m3" path="res://UI/eye.png" id="1_kio24"]
+[ext_resource type="ArrayMesh" uid="uid://ds23s638vmj7u" path="res://Meshes/eye.obj" id="2_5awdd"]
+[ext_resource type="Texture2D" uid="uid://dh3oiqsqu8gud" path="res://Meshes/textures/skladnik_oko_slepca.png" id="2_mpd3d"]
+
+[resource]
+script = ExtResource("1_fqqj4")
+item_name = "Eye"
+icon = ExtResource("1_kio24")
+mesh = ExtResource("2_5awdd")
+material = ExtResource("2_mpd3d")
+metadata/_custom_type_script = "uid://6bkuldrancag"

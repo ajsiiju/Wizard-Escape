@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://b6ghyk3i6uqce"]
+
+[ext_resource type="PackedScene" uid="uid://bh5g6qoygd5s2" path="res://Scenes/player.tscn" id="1_5ogh5"]
+[ext_resource type="PackedScene" uid="uid://dlg7qjbhjt58x" path="res://Meshes/podloga.fbx" id="2_5ogh5"]
+[ext_resource type="PackedScene" uid="uid://cyv3h1m6jc7r3" path="res://Meshes/sciana_2.fbx" id="3_5ogh5"]
+[ext_resource type="AudioStream" uid="uid://b6vtcjwjr2i7r" path="res://Audio/SFX_Pot_Bubbling_Loop.wav" id="4_lb6bl"]
+[ext_resource type="Texture2D" uid="uid://cdkk24gvlxdr3" path="res://UI/inventory3.png" id="5_o3wvq"]
+[ext_resource type="Script" uid="uid://b1qpdsqcpg0vs" path="res://Scripts/timer.gd" id="6_iceld"]
+[ext_resource type="Texture2D" uid="uid://bvjgf3q3gb2a2" path="res://UI/timer3.png" id="6_pg4io"]
+[ext_resource type="AudioStream" uid="uid://cnyfn5womwmr5" path="res://Audio/maintheme_music.wav" id="7_pg4io"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bk35t"]
+sky_top_color = Color(0.60976, 0.755306, 0.930569, 1)
+sky_horizon_color = Color(1.39581, 1.4396, 1.41953, 1)
+ground_bottom_color = Color(0.577159, 0.606756, 0.351217, 1)
+ground_horizon_color = Color(1.39581, 1.4396, 1.41953, 1)
+
+[sub_resource type="Sky" id="Sky_3bxa3"]
+sky_material = SubResource("ProceduralSkyMaterial_bk35t")
+
+[sub_resource type="Environment" id="Environment_r48yj"]
+background_mode = 2
+sky = SubResource("Sky_3bxa3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pwkw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bn4p"]
+bg_color = Color(0.654902, 0.64705884, 0.5137255, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node3D" type="Node3D" unique_id=503891561]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1565331114]
+environment = SubResource("Environment_r48yj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=537651458]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" parent="." unique_id=1849972682 instance=ExtResource("1_5ogh5")]
+
+[node name="Skeleton3D" parent="player/Mesh/root" parent_id_path=PackedInt32Array(1849972682, 369327205, 753926443) index="0" unique_id=1791610920]
+bones/0/rotation = Quaternion(0.03919319, -0.7034859, -0.022837225, 0.7092601)
+bones/1/rotation = Quaternion(-0.0028806345, 0.00057236175, -0.11845761, 0.9929548)
+bones/2/rotation = Quaternion(-0.0059853503, 0.000825555, 0.04514975, 0.998962)
+bones/3/rotation = Quaternion(-0.005855677, 0.0015406945, 0.11017206, 0.9938941)
+bones/4/rotation = Quaternion(-0.0055560055, 0.0024012574, 0.06607927, 0.99779606)
+bones/5/rotation = Quaternion(-0.005377164, 0.0027271344, 0.020929419, 0.99976283)
+bones/6/rotation = Quaternion(-0.00083918154, -0.0036374158, -0.25000358, 0.9682378)
+bones/7/rotation = Quaternion(-0.00016532846, -0.0036422655, -0.027531799, 0.99961436)
+bones/8/rotation = Quaternion(-0.004771559, -0.02310122, 0.12533908, 0.99183357)
+bones/12/rotation = Quaternion(-0.0072738836, 0.7600006, 0.01705858, 0.6496578)
+bones/13/rotation = Quaternion(-0.23202422, 0.4821777, 0.166619, 0.82819545)
+bones/14/rotation = Quaternion(0.28605214, -0.029271735, -0.084500484, 0.954032)
+bones/23/rotation = Quaternion(-0.4206728, 0.13032113, -0.035900626, 0.89708537)
+bones/38/rotation = Quaternion(-0.3300281, 0.7492754, -0.5722473, 0.046914868)
+bones/59/rotation = Quaternion(0.76327634, -0.00030057138, -0.645371, 0.03009318)
+bones/60/rotation = Quaternion(-0.0847256, 0.50516385, 0.058314636, 0.8568725)
+bones/61/rotation = Quaternion(0.25034326, 0.030573796, -0.14501756, 0.9567463)
+bones/70/rotation = Quaternion(-0.48316056, 0.0035354032, -0.052381817, 0.8739563)
+bones/106/rotation = Quaternion(-0.0065322756, 0.091735214, 0.99568427, -0.012441796)
+bones/107/rotation = Quaternion(0.002680905, -0.006004247, -0.12667763, 0.9919222)
+bones/108/rotation = Quaternion(0.046454757, 0.0006309069, 0.15185396, 0.98731047)
+bones/109/rotation = Quaternion(2.0692687e-07, 4.277635e-06, -0.7071063, 0.70710725)
+bones/129/rotation = Quaternion(0.12612051, -0.09707505, 0.1031592, 0.98184943)
+bones/130/rotation = Quaternion(-0.0049495855, -0.0021005543, -0.06729629, 0.99771863)
+bones/131/rotation = Quaternion(-0.109762795, 0.103895545, 0.06447982, 0.98640776)
+bones/132/rotation = Quaternion(-1.247119e-08, 4.756337e-07, -0.7071068, 0.7071067)
+bones/157/rotation = Quaternion(0.70588726, -0.041373894, -0.70424616, -0.063629806)
+
+[node name="podloga" parent="." unique_id=1625790342 instance=ExtResource("2_5ogh5")]
+
+[node name="podloga" parent="podloga" unique_id=217112991 instance=ExtResource("2_5ogh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13403702, 3.2826815, 0.18287373)
+
+[node name="sciana_2" parent="." unique_id=1050417136 instance=ExtResource("3_5ogh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11825323, 0.038247686, -0.09900284)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1344056843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7529716, 0.541178, 3.3168368)
+stream = ExtResource("4_lb6bl")
+autoplay = true
+bus = &"SoundFx"
+
+[node name="inventoryTimer" type="CanvasLayer" parent="." unique_id=2130108570]
+
+[node name="Inventory" type="Panel" parent="inventoryTimer" unique_id=756827647]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="inventoryTimer/Inventory" unique_id=160740513]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -144.0
+offset_right = 196.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_o3wvq")
+
+[node name="Timer" type="Panel" parent="inventoryTimer" unique_id=388225839]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("6_iceld")
+
+[node name="TextureRect" type="TextureRect" parent="inventoryTimer/Timer" unique_id=1312159104]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+texture = ExtResource("6_pg4io")
+
+[node name="ProgressBar" type="ProgressBar" parent="inventoryTimer/Timer/TextureRect" unique_id=1806582273]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -7.5
+offset_right = 228.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7pwkw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5bn4p")
+max_value = 58.0
+value = 58.0
+rounded = true
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="inventoryTimer/Timer/TextureRect" unique_id=846870312]
+
+[node name="Line2D" type="Line2D" parent="inventoryTimer/Timer" unique_id=1730427754]
+
+[node name="main theme" type="AudioStreamPlayer" parent="." unique_id=1894578561]
+stream = ExtResource("7_pg4io")
+bus = &"Music"
+
+[connection signal="timeout" from="inventoryTimer/Timer/TextureRect/Timer" to="inventoryTimer/Timer" method="_on_timer_timeout"]
+
+[editable path="player"]
+[editable path="player/Mesh"]

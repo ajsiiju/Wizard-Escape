@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c4wkvupnhe5ml"]
+
+[ext_resource type="Texture2D" uid="uid://c5aesmpyohx1c" path="res://UI/herb.png" id="1_iby53"]
+[ext_resource type="Script" uid="uid://6bkuldrancag" path="res://Scripts/item_data.gd" id="1_kn1t2"]
+[ext_resource type="ArrayMesh" uid="uid://hr325akucyh0" path="res://Meshes/herb.obj" id="2_ahej5"]
+[ext_resource type="Texture2D" uid="uid://xi0lnlalamaf" path="res://Meshes/textures/skladnik_tojad.png" id="2_d2g4y"]
+
+[resource]
+script = ExtResource("1_kn1t2")
+item_name = "Herb"
+icon = ExtResource("1_iby53")
+mesh = ExtResource("2_ahej5")
+material = ExtResource("2_d2g4y")
+metadata/_custom_type_script = "uid://6bkuldrancag"

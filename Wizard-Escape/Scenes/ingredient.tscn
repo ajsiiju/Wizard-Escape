@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bhamlfimdgmnn"]
+
+[ext_resource type="Script" uid="uid://dqbhg13pkrc82" path="res://Scripts/ingredient.gd" id="1_70mii"]
+[ext_resource type="PackedScene" uid="uid://40mofbykvhxv" path="res://Scenes/interactable.tscn" id="2_pc44i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38214"]
+size = Vector3(0.3562622, 0.18351746, 0.3330078)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ww4r6"]
+radius = 1.2036133
+height = 5.5341797
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=871866696]
+script = ExtResource("1_70mii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=961450725]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1793782196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0066223145, 0.09169769, 0)
+shape = SubResource("BoxShape3D_38214")
+
+[node name="Interactable" parent="." unique_id=1222549409 instance=ExtResource("2_pc44i")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0" unique_id=943371480]
+shape = SubResource("CapsuleShape3D_ww4r6")
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="Interactable"]
