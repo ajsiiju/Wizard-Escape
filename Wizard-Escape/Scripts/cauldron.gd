@@ -8,7 +8,9 @@ var is_open: bool = false
 @onready var ing_slot_2_icon: TextureRect = $"CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot2/Icon"
 @onready var potion_slot: TextureRect = $"CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon2/PotionSlot/Icon"
 @export var item: ItemData
-@onready var cauldron := $"RigidBody3D/SM_Cauldron/cauldron main"
+@onready var cauldron_normal: Node3D = $RigidBody3D/cauldron_normal
+@onready var cauldron_hover: Node3D = $RigidBody3D/cauldron_hover
+
 var yellow_potion := preload("res://UI/yellow_potion.png")
 var pink_potion := preload("res://UI/pink_potion.png")
 var blue_potion := preload("res://UI/blue_potion.png")
@@ -31,10 +33,13 @@ func open() -> void:
 		is_open = false
 
 func add_highlight() -> void:
-	cauldron.material_overlay = load("res://Scripts/Recource/object_highlight.tres")
+	cauldron_hover.visible = true
+	cauldron_normal.visible = false
+	
 
 func remove_highlight() -> void:
-	cauldron.material_overlay = null
+	cauldron_normal.visible = true
+	cauldron_hover.visible = false
 
 func _on_drink_button_pressed() -> void:
 	#runs the cinematic with drinking

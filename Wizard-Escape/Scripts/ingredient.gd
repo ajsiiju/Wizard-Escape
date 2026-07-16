@@ -7,7 +7,7 @@ func add_highlight() -> void:
 	$MeshInstance3D.material_overlay = load("res://Scripts/Recource/object_highlight.tres")
 
 func remove_highlight() -> void:
-	$MeshInstance3D.material_overlay = null
+	$MeshInstance3D.material_overlay = load("res://Scripts/Recource/object_highlight_black.tres")
 
 
 func _on_interactable_focused(interactor: Interactor) -> void:

@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://lrhktfgqotpc" path="res://UI/pot_3.png" id="6_v2jri"]
 [ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="8_v2jri"]
 [ext_resource type="PackedScene" uid="uid://40mofbykvhxv" path="res://Scenes/interactable.tscn" id="10_oiwvb"]
-[ext_resource type="PackedScene" uid="uid://o2ya5dnyyfhl" path="res://Meshes/test/SM_Cauldron.glb" id="11_uhwwe"]
+[ext_resource type="PackedScene" uid="uid://choscmn38jbf0" path="res://Meshes/lineart/cauldron_hover.glb" id="12_axbx3"]
+[ext_resource type="PackedScene" uid="uid://c3wiqckst5itm" path="res://Meshes/lineart/SM_Cauldron_Merged_Lin.glb" id="12_sg3l0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uhwwe"]
 radius = 1.4785156
@@ -287,8 +288,12 @@ shape = SubResource("CapsuleShape3D_uhwwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043945313, 0.6043701, 0.001953125)
 shape = SubResource("BoxShape3D_sg3l0")
 
-[node name="SM_Cauldron" parent="RigidBody3D" unique_id=1572696580 instance=ExtResource("11_uhwwe")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0048627853, 0, 0.008094609)
+[node name="cauldron_normal" parent="RigidBody3D" unique_id=546061663 instance=ExtResource("12_sg3l0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.005085647, 0, 0.006401618)
+
+[node name="cauldron_hover" parent="RigidBody3D" unique_id=1551506229 instance=ExtResource("12_axbx3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.005, 0, 0.006)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1488792080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1058469, 0)
@@ -310,4 +315,3 @@ draw_pass_1 = SubResource("SphereMesh_qspni")
 [connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
 
 [editable path="Interactable"]
-[editable path="RigidBody3D/SM_Cauldron"]

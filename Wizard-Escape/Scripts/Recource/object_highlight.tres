@@ -4,6 +4,6 @@
 blend_mode = 4
 cull_mode = 1
 shading_mode = 0
-albedo_color = Color(0.2901961, 0.39215687, 0.52156866, 1)
+albedo_color = Color(0.1743061, 0.52393436, 0.7686256, 1)
 grow = true
-grow_amount = 0.005
+grow_amount = 0.009

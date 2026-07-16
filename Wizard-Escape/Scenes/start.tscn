@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://jbssvno27sw6" path="res://Meshes/SM_szafa_1.fbx" id="22_eb5qc"]
 [ext_resource type="Script" uid="uid://dfm6u5kqdnncp" path="res://Scripts/ingredients_appear.gd" id="22_vpakw"]
 [ext_resource type="PackedScene" uid="uid://d16meij6dxsfu" path="res://Meshes/SM_szafa_2.fbx" id="23_8rnep"]
-[ext_resource type="PackedScene" uid="uid://dsy140v14c3td" path="res://Meshes/test/castle.glb" id="24_8rnep"]
+[ext_resource type="PackedScene" uid="uid://cdrn82ynf5vjt" path="res://Meshes/castle_lineart/castle_lineart.glb" id="24_8rnep"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pwkw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -41,29 +41,29 @@ corner_radius_bottom_left = 20
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 6.6046505, 0, 4.6060147)
 
 [node name="Skeleton3D" parent="player/Mesh/root" parent_id_path=PackedInt32Array(1849972682, 369327205, 753926443) index="0" unique_id=1791610920]
-bones/0/rotation = Quaternion(0.039295383, -0.7036359, -0.023400234, 0.7090874)
-bones/1/rotation = Quaternion(-0.0028901654, 0.00059939624, -0.11844997, 0.9929556)
-bones/2/rotation = Quaternion(-0.0059844526, 0.0008691061, 0.0451589, 0.9989615)
-bones/3/rotation = Quaternion(-0.0058486783, 0.001582825, 0.11018036, 0.99389315)
-bones/4/rotation = Quaternion(-0.0055435537, 0.002442648, 0.06608808, 0.99779546)
-bones/5/rotation = Quaternion(-0.0053641726, 0.002771658, 0.020930925, 0.9997627)
-bones/6/rotation = Quaternion(-0.00083390006, -0.0036397993, -0.25001034, 0.968236)
-bones/7/rotation = Quaternion(-0.00015781059, -0.0036495454, -0.027510941, 0.9996149)
-bones/8/rotation = Quaternion(-0.004714253, -0.023121102, 0.12537208, 0.99182916)
-bones/12/rotation = Quaternion(-0.0073786844, 0.7600091, 0.017068543, 0.64964646)
-bones/13/rotation = Quaternion(-0.23210527, 0.48209655, 0.16660017, 0.8282237)
-bones/14/rotation = Quaternion(0.28605568, -0.029216167, -0.08467271, 0.95401734)
-bones/23/rotation = Quaternion(-0.42063054, 0.1302933, -0.036026064, 0.89710414)
-bones/59/rotation = Quaternion(0.763312, -0.0002596416, -0.64532745, 0.030123262)
-bones/60/rotation = Quaternion(-0.08478672, 0.5049545, 0.05829262, 0.8569913)
-bones/61/rotation = Quaternion(0.25023472, 0.030490734, -0.14534225, 0.95672804)
-bones/70/rotation = Quaternion(-0.48354065, 0.0014221679, -0.055892702, 0.87353444)
-bones/106/rotation = Quaternion(-0.0055451025, 0.09210263, 0.99565417, -0.01261491)
-bones/107/rotation = Quaternion(0.0024312688, -0.0060613924, -0.12594505, 0.9920158)
-bones/108/rotation = Quaternion(0.045985073, 0.0013239258, 0.151462, 0.987392)
-bones/129/rotation = Quaternion(0.125827, -0.09604691, 0.10328593, 0.98197484)
-bones/130/rotation = Quaternion(-0.005034492, -0.0021716058, -0.0673788, 0.99771243)
-bones/131/rotation = Quaternion(-0.10905752, 0.10317011, 0.064782225, 0.98654234)
+bones/0/rotation = Quaternion(0.031426057, -0.7027617, -0.039447036, 0.7096354)
+bones/1/rotation = Quaternion(-0.0018541539, -0.0005586758, -0.11794402, 0.99301845)
+bones/2/rotation = Quaternion(-0.0035583328, -0.0014599827, 0.046183746, 0.9989256)
+bones/3/rotation = Quaternion(-0.0037100753, -0.0009871344, 0.111264825, 0.9937834)
+bones/4/rotation = Quaternion(-0.0038159634, -0.00044315733, 0.06712167, 0.9977374)
+bones/5/rotation = Quaternion(-0.0038441967, -0.00022808311, 0.021910703, 0.9997526)
+bones/6/rotation = Quaternion(-0.000522211, -0.003400813, -0.25009617, 0.9682149)
+bones/7/rotation = Quaternion(0.00013211329, -0.003478296, -0.027341232, 0.99962014)
+bones/8/rotation = Quaternion(-0.002865472, -0.02239779, 0.12931381, 0.99134666)
+bones/12/rotation = Quaternion(-0.009192189, 0.759017, 0.019175336, 0.6507236)
+bones/13/rotation = Quaternion(-0.23940675, 0.47303247, 0.16729115, 0.831227)
+bones/14/rotation = Quaternion(0.27894372, -0.025007952, -0.09174923, 0.9555873)
+bones/23/rotation = Quaternion(-0.42375594, 0.14456515, 0.009762417, 0.8941122)
+bones/59/rotation = Quaternion(0.7610787, 0.00085157173, -0.6475111, 0.03857497)
+bones/60/rotation = Quaternion(-0.09362377, 0.4740311, 0.06453415, 0.87313485)
+bones/61/rotation = Quaternion(0.2564022, 0.047092088, -0.1601802, 0.95204127)
+bones/70/rotation = Quaternion(-0.46030277, 0.06283401, 0.039143942, 0.8846701)
+bones/106/rotation = Quaternion(-0.0023137303, 0.09019135, 0.9958653, -0.010606306)
+bones/107/rotation = Quaternion(0.0032453174, -0.0075378707, -0.091721706, 0.99575084)
+bones/108/rotation = Quaternion(0.030163197, 0.006617274, 0.12958588, 0.99108726)
+bones/129/rotation = Quaternion(0.13110872, -0.09252426, 0.10468855, 0.98147345)
+bones/130/rotation = Quaternion(-0.0023894883, -0.0018918514, -0.06931397, 0.9975903)
+bones/131/rotation = Quaternion(-0.10141393, 0.0976976, 0.06998097, 0.98755914)
 
 [node name="inventoryTimer" type="CanvasLayer" parent="." unique_id=2130108570]
 
@@ -450,7 +450,7 @@ spot_range = 4.8031397
 spot_angle = 62.87
 spot_angle_attenuation = 0.3660217
 
-[node name="castle" parent="." unique_id=696124173 instance=ExtResource("24_8rnep")]
+[node name="castle_lineart" parent="." unique_id=1352450050 instance=ExtResource("24_8rnep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, -0.045, -0.065)
 
 [connection signal="timeout" from="inventoryTimer/Timer/MarginContainer/TextureRect/Timer" to="inventoryTimer/Timer" method="_on_timer_timeout"]
