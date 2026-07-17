@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://7cjxstt2g11b"]
+
+[ext_resource type="Script" uid="uid://bilcfwdo3ypan" path="res://Scripts/pause_menu.gd" id="1_sjs17"]
+[ext_resource type="Texture2D" uid="uid://bhrbibonfvpp1" path="res://UI/logo.png" id="2_sjs17"]
+[ext_resource type="Shader" uid="uid://c13rtq0chl8ww" path="res://Scripts/blur.gdshader" id="2_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://cq5ablxowrd5s" path="res://UI/button2.png" id="3_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://danm1vsdvnhbi" path="res://UI/button.png" id="4_stj27"]
+[ext_resource type="BitMap" uid="uid://buwqjftjvj0mf" path="res://UI/buttonBitmap.png" id="5_ix48p"]
+[ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="6_524vl"]
+[ext_resource type="AudioStream" uid="uid://b71pvi0j4yutr" path="res://Audio/main_menu_theme.wav" id="9_ix48p"]
+[ext_resource type="AudioStream" uid="uid://dxis1txvvdoh6" path="res://Audio/SFX_UI_Menu_EnterGame_01.wav" id="10_524vl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stj27"]
+shader = ExtResource("2_u8tnp")
+shader_parameter/blur = 2.5
+shader_parameter/brightness = 0.400000019
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=939943146]
+process_mode = 3
+script = ExtResource("1_sjs17")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1036682457]
+material = SubResource("ShaderMaterial_stj27")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=38044361]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_right = 382.0
+offset_bottom = 877.0
+grow_horizontal = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer2" unique_id=1130389875]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 90
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/MarginContainer4" unique_id=1666059456]
+layout_mode = 2
+texture = ExtResource("2_sjs17")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=578647298]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=1444345649]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ReturnButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer" unique_id=666265417]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("3_u8tnp")
+texture_pressed = ExtResource("3_u8tnp")
+texture_hover = ExtResource("4_stj27")
+texture_click_mask = ExtResource("5_ix48p")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer/ReturnButton" unique_id=658885230]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_524vl")
+theme_override_font_sizes/font_size = 45
+text = "RETURN"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=909173328]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="RestartButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer2" unique_id=118511326]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("3_u8tnp")
+texture_pressed = ExtResource("3_u8tnp")
+texture_hover = ExtResource("4_stj27")
+texture_click_mask = ExtResource("5_ix48p")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer2/RestartButton" unique_id=194094351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_524vl")
+theme_override_font_sizes/font_size = 45
+text = "RESTART"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer2/VBoxContainer" unique_id=573274946]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer/MarginContainer3" unique_id=2080600260]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("3_u8tnp")
+texture_pressed = ExtResource("3_u8tnp")
+texture_hover = ExtResource("4_stj27")
+texture_click_mask = ExtResource("5_ix48p")
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/MarginContainer3/QuitButton" unique_id=1773181722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("6_524vl")
+theme_override_font_sizes/font_size = 45
+text = "QUIT"
+
+[node name="MainMenuTheme" type="AudioStreamPlayer" parent="." unique_id=66731970]
+stream = ExtResource("9_ix48p")
+bus = &"Music"
+
+[node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=1713309711]
+stream = ExtResource("10_524vl")
+bus = &"SoundFx"
+
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer3/QuitButton" to="." method="_on_quit_button_pressed"]

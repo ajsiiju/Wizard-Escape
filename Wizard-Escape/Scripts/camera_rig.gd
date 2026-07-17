@@ -27,8 +27,8 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse_input = -event.relative * mouse_sensitivity
-	elif event is InputEventKey and event.keycode == KEY_ESCAPE and event.is_pressed():
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#elif event is InputEventKey and event.keycode == KEY_ESCAPE and event.is_pressed():
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

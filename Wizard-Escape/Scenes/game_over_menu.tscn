@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dcs4nnqeyykpe"]
+
+[ext_resource type="Texture2D" uid="uid://baoocqbmaiymd" path="res://UI/game_over.png" id="1_q2job"]
+[ext_resource type="Script" uid="uid://ddk15vqkcf4dw" path="res://Scripts/game_over_menu.gd" id="1_thk71"]
+[ext_resource type="Texture2D" uid="uid://cq5ablxowrd5s" path="res://UI/button2.png" id="2_thk71"]
+[ext_resource type="Texture2D" uid="uid://danm1vsdvnhbi" path="res://UI/button.png" id="3_jfp0r"]
+[ext_resource type="BitMap" uid="uid://buwqjftjvj0mf" path="res://UI/buttonBitmap.png" id="4_h05y8"]
+[ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="5_w552w"]
+[ext_resource type="AudioStream" uid="uid://b71pvi0j4yutr" path="res://Audio/main_menu_theme.wav" id="7_h05y8"]
+[ext_resource type="AudioStream" uid="uid://dxis1txvvdoh6" path="res://Audio/SFX_UI_Menu_EnterGame_01.wav" id="8_w552w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8pv6"]
+texture = ExtResource("1_q2job")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=892767185]
+script = ExtResource("1_thk71")
+
+[node name="Panel" type="Panel" parent="." unique_id=118452557]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d8pv6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1001103223]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -421.0
+offset_right = 295.0
+offset_bottom = 421.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 351
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=575505090]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=128089503]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="PlayButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=247262410]
+layout_mode = 2
+texture_normal = ExtResource("2_thk71")
+texture_pressed = ExtResource("2_thk71")
+texture_hover = ExtResource("3_jfp0r")
+texture_click_mask = ExtResource("4_h05y8")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/PlayButton" unique_id=1372843900]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("5_w552w")
+theme_override_font_sizes/font_size = 45
+text = "PLAY AGAIN"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2140704391]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="SettingsButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=1414942063]
+layout_mode = 2
+texture_normal = ExtResource("2_thk71")
+texture_pressed = ExtResource("2_thk71")
+texture_hover = ExtResource("3_jfp0r")
+texture_click_mask = ExtResource("4_h05y8")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer2/SettingsButton" unique_id=717069568]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("5_w552w")
+theme_override_font_sizes/font_size = 45
+text = "SETTINGS"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=8483660]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="QuitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer3" unique_id=1435413126]
+layout_mode = 2
+texture_normal = ExtResource("2_thk71")
+texture_pressed = ExtResource("2_thk71")
+texture_hover = ExtResource("3_jfp0r")
+texture_click_mask = ExtResource("4_h05y8")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer3/QuitButton" unique_id=1219999632]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6555264, 0.64752054, 0.51429963, 1)
+theme_override_fonts/font = ExtResource("5_w552w")
+theme_override_font_sizes/font_size = 45
+text = "QUIT"
+
+[node name="MainMenuTheme" type="AudioStreamPlayer" parent="." unique_id=337386743]
+stream = ExtResource("7_h05y8")
+bus = &"Music"
+
+[node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=1664935380]
+stream = ExtResource("8_w552w")
+bus = &"SoundFx"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer3/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -2,13 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://b6vtcjwjr2i7r" path="res://Audio/SFX_Pot_Bubbling_Loop.wav" id="1_2rulr"]
 [ext_resource type="Script" uid="uid://ccodf4n8l6ska" path="res://Scripts/cauldron.gd" id="3_it5qe"]
-[ext_resource type="Texture2D" uid="uid://dqggces68vfh7" path="res://UI/pot_1.png" id="4_11340"]
-[ext_resource type="Script" uid="uid://dn180klm4skhs" path="res://Scripts/inventory.gd" id="4_sg3l0"]
-[ext_resource type="Texture2D" uid="uid://clykykujgglbu" path="res://UI/pot_2.png" id="5_kpobb"]
-[ext_resource type="Texture2D" uid="uid://dd2mxaa204teu" path="res://UI/pot_4.png" id="6_kpobb"]
-[ext_resource type="Script" uid="uid://c7iyorw8qogli" path="res://Scripts/drag_drop.gd" id="6_oiwvb"]
-[ext_resource type="Texture2D" uid="uid://lrhktfgqotpc" path="res://UI/pot_3.png" id="6_v2jri"]
-[ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="8_v2jri"]
+[ext_resource type="AudioStream" uid="uid://dxis1txvvdoh6" path="res://Audio/SFX_UI_Menu_EnterGame_01.wav" id="6_it5qe"]
 [ext_resource type="PackedScene" uid="uid://40mofbykvhxv" path="res://Scenes/interactable.tscn" id="10_oiwvb"]
 [ext_resource type="PackedScene" uid="uid://choscmn38jbf0" path="res://Meshes/lineart/cauldron_hover.glb" id="12_axbx3"]
 [ext_resource type="PackedScene" uid="uid://c3wiqckst5itm" path="res://Meshes/lineart/SM_Cauldron_Merged_Lin.glb" id="12_sg3l0"]
@@ -63,219 +57,6 @@ autoplay = true
 max_distance = 8.5
 bus = &"SoundFx"
 
-[node name="CauldronUI" type="CanvasLayer" parent="." unique_id=988296366]
-visible = false
-
-[node name="Panel" type="Panel" parent="CauldronUI" unique_id=379654554]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_sg3l0")
-
-[node name="MarCon" type="MarginContainer" parent="CauldronUI/Panel" unique_id=1939455957]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -238.0
-offset_right = 238.0
-offset_bottom = 238.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_bottom = 51
-
-[node name="PotUIBG" type="TextureRect" parent="CauldronUI/Panel/MarCon" unique_id=546299464]
-layout_mode = 2
-texture = ExtResource("4_11340")
-
-[node name="MarCon" type="MarginContainer" parent="CauldronUI/Panel/MarCon/PotUIBG" unique_id=201457699]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -142.5
-offset_right = 284.0
-offset_bottom = 142.5
-grow_vertical = 2
-theme_override_constants/margin_left = 56
-
-[node name="Slots" type="TextureRect" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon" unique_id=303841596]
-layout_mode = 2
-texture = ExtResource("5_kpobb")
-
-[node name="MarCon" type="MarginContainer" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots" unique_id=1155188083]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -119.5
-offset_right = 86.0
-offset_bottom = 119.5
-grow_vertical = 2
-theme_override_constants/margin_left = 21
-
-[node name="GridContainer2" type="GridContainer" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon" unique_id=1623927467]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/v_separation = 113
-
-[node name="IngSlot1" type="Panel" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2" unique_id=1480229731]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(65, 65)
-layout_mode = 2
-script = ExtResource("6_oiwvb")
-
-[node name="Icon" type="TextureRect" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1" unique_id=1372243531]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -32.5
-offset_right = 37.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
-[node name="IngSlot2" type="Panel" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2" unique_id=589965205]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(65, 65)
-layout_mode = 2
-script = ExtResource("6_oiwvb")
-
-[node name="Icon" type="TextureRect" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot2" unique_id=749036182]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -32.5
-offset_right = 37.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
-[node name="MarCon2" type="MarginContainer" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots" unique_id=616567301]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -32.5
-offset_bottom = 32.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_constants/margin_right = 32
-
-[node name="PotionSlot" type="Panel" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon2" unique_id=1415162356]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(65, 65)
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="CauldronUI/Panel/MarCon/PotUIBG/MarCon/Slots/MarCon2/PotionSlot" unique_id=1865775473]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -32.5
-offset_right = 37.5
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
-[node name="Drink" type="MarginContainer" parent="CauldronUI/Panel/MarCon/PotUIBG" unique_id=1448999765]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -231.0
-offset_bottom = 70.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 54
-theme_override_constants/margin_right = 45
-
-[node name="DrinkButton" type="TextureButton" parent="CauldronUI/Panel/MarCon/PotUIBG/Drink" unique_id=1972717750]
-layout_mode = 2
-texture_normal = ExtResource("6_kpobb")
-texture_pressed = ExtResource("6_kpobb")
-texture_hover = ExtResource("6_v2jri")
-
-[node name="Label" type="Label" parent="CauldronUI/Panel/MarCon/PotUIBG/Drink/DrinkButton" unique_id=1500973118]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -11.0
-offset_right = 36.0
-offset_bottom = 11.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.654902, 0.64705884, 0.5137255, 1)
-theme_override_fonts/font = ExtResource("8_v2jri")
-theme_override_font_sizes/font_size = 23
-text = "DRINK"
-
-[node name="Create" type="MarginContainer" parent="CauldronUI/Panel/MarCon/PotUIBG" unique_id=1504149851]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -276.0
-offset_top = -124.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/margin_right = 45
-theme_override_constants/margin_bottom = 54
-
-[node name="CreateButton" type="TextureButton" parent="CauldronUI/Panel/MarCon/PotUIBG/Create" unique_id=1324181797]
-layout_mode = 2
-texture_normal = ExtResource("6_kpobb")
-texture_pressed = ExtResource("6_kpobb")
-texture_hover = ExtResource("6_v2jri")
-
-[node name="Label" type="Label" parent="CauldronUI/Panel/MarCon/PotUIBG/Create/CreateButton" unique_id=1675209115]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -7.5
-offset_right = 30.0
-offset_bottom = 7.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.654902, 0.64705884, 0.5137255, 1)
-theme_override_fonts/font = ExtResource("8_v2jri")
-theme_override_font_sizes/font_size = 23
-text = "CREATE"
-
 [node name="Interactable" parent="." unique_id=1222549409 instance=ExtResource("10_oiwvb")]
 
 [node name="CollisionShape3D" parent="Interactable" index="0" unique_id=943371480]
@@ -308,8 +89,10 @@ lifetime = 3.5
 process_material = SubResource("ParticleProcessMaterial_axbx3")
 draw_pass_1 = SubResource("SphereMesh_qspni")
 
-[connection signal="pressed" from="CauldronUI/Panel/MarCon/PotUIBG/Drink/DrinkButton" to="." method="_on_drink_button_pressed"]
-[connection signal="pressed" from="CauldronUI/Panel/MarCon/PotUIBG/Create/CreateButton" to="." method="_on_create_button_pressed"]
+[node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=654332674]
+stream = ExtResource("6_it5qe")
+bus = &"SoundFx"
+
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]

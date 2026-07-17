@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends StaticBody3D
 
 @export var item: ItemData
 signal ingredient_pick_up(data: ItemData)

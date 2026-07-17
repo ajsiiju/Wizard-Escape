@@ -26,6 +26,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	var preview := duplicate()
 	var c := Control.new()
 	c.add_child(preview)
+	c.z_index = 1
 	preview.position -= Vector2(25, 25)
 	set_drag_preview(c)
 	icon.hide()

@@ -9,6 +9,11 @@
 [ext_resource type="Script" uid="uid://b1qpdsqcpg0vs" path="res://Scripts/timer.gd" id="6_iceld"]
 [ext_resource type="Texture2D" uid="uid://bvjgf3q3gb2a2" path="res://UI/timer3.png" id="6_pg4io"]
 [ext_resource type="AudioStream" uid="uid://cnyfn5womwmr5" path="res://Audio/maintheme_music.wav" id="7_pg4io"]
+[ext_resource type="Texture2D" uid="uid://dqggces68vfh7" path="res://UI/pot_1.png" id="7_vheb2"]
+[ext_resource type="Texture2D" uid="uid://clykykujgglbu" path="res://UI/pot_2.png" id="8_3sorl"]
+[ext_resource type="Texture2D" uid="uid://dd2mxaa204teu" path="res://UI/pot_4.png" id="9_7c3rw"]
+[ext_resource type="Texture2D" uid="uid://lrhktfgqotpc" path="res://UI/pot_3.png" id="10_mrev8"]
+[ext_resource type="FontFile" uid="uid://bolenot38jlyb" path="res://UI/friz-quadrata/friz-quadrata-regular-os-5870333951e7c.ttf" id="11_rya6j"]
 [ext_resource type="PackedScene" uid="uid://btol3bjqldc0k" path="res://Meshes/SM_oltarz.fbx" id="12_knwj7"]
 [ext_resource type="PackedScene" uid="uid://dxb43pa6spyog" path="res://Meshes/SM_taboret.fbx" id="14_w5kog"]
 [ext_resource type="PackedScene" uid="uid://bs1kwrgel37oo" path="res://Meshes/SM_krzeslo.fbx" id="15_y71vl"]
@@ -24,6 +29,7 @@
 [ext_resource type="Script" uid="uid://dfm6u5kqdnncp" path="res://Scripts/ingredients_appear.gd" id="22_vpakw"]
 [ext_resource type="PackedScene" uid="uid://d16meij6dxsfu" path="res://Meshes/SM_szafa_2.fbx" id="23_8rnep"]
 [ext_resource type="PackedScene" uid="uid://cdrn82ynf5vjt" path="res://Meshes/castle_lineart/castle_lineart.glb" id="24_8rnep"]
+[ext_resource type="PackedScene" uid="uid://7cjxstt2g11b" path="res://Scenes/pause_menu.tscn" id="30_3sorl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pwkw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -41,31 +47,242 @@ corner_radius_bottom_left = 20
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 6.6046505, 0, 4.6060147)
 
 [node name="Skeleton3D" parent="player/Mesh/root" parent_id_path=PackedInt32Array(1849972682, 369327205, 753926443) index="0" unique_id=1791610920]
-bones/0/rotation = Quaternion(0.031426057, -0.7027617, -0.039447036, 0.7096354)
-bones/1/rotation = Quaternion(-0.0018541539, -0.0005586758, -0.11794402, 0.99301845)
-bones/2/rotation = Quaternion(-0.0035583328, -0.0014599827, 0.046183746, 0.9989256)
-bones/3/rotation = Quaternion(-0.0037100753, -0.0009871344, 0.111264825, 0.9937834)
-bones/4/rotation = Quaternion(-0.0038159634, -0.00044315733, 0.06712167, 0.9977374)
-bones/5/rotation = Quaternion(-0.0038441967, -0.00022808311, 0.021910703, 0.9997526)
-bones/6/rotation = Quaternion(-0.000522211, -0.003400813, -0.25009617, 0.9682149)
-bones/7/rotation = Quaternion(0.00013211329, -0.003478296, -0.027341232, 0.99962014)
-bones/8/rotation = Quaternion(-0.002865472, -0.02239779, 0.12931381, 0.99134666)
-bones/12/rotation = Quaternion(-0.009192189, 0.759017, 0.019175336, 0.6507236)
-bones/13/rotation = Quaternion(-0.23940675, 0.47303247, 0.16729115, 0.831227)
-bones/14/rotation = Quaternion(0.27894372, -0.025007952, -0.09174923, 0.9555873)
-bones/23/rotation = Quaternion(-0.42375594, 0.14456515, 0.009762417, 0.8941122)
-bones/59/rotation = Quaternion(0.7610787, 0.00085157173, -0.6475111, 0.03857497)
-bones/60/rotation = Quaternion(-0.09362377, 0.4740311, 0.06453415, 0.87313485)
-bones/61/rotation = Quaternion(0.2564022, 0.047092088, -0.1601802, 0.95204127)
-bones/70/rotation = Quaternion(-0.46030277, 0.06283401, 0.039143942, 0.8846701)
-bones/106/rotation = Quaternion(-0.0023137303, 0.09019135, 0.9958653, -0.010606306)
-bones/107/rotation = Quaternion(0.0032453174, -0.0075378707, -0.091721706, 0.99575084)
-bones/108/rotation = Quaternion(0.030163197, 0.006617274, 0.12958588, 0.99108726)
-bones/129/rotation = Quaternion(0.13110872, -0.09252426, 0.10468855, 0.98147345)
-bones/130/rotation = Quaternion(-0.0023894883, -0.0018918514, -0.06931397, 0.9975903)
-bones/131/rotation = Quaternion(-0.10141393, 0.0976976, 0.06998097, 0.98755914)
+bones/0/rotation = Quaternion(0.038202286, -0.7028585, -0.017507225, 0.7100873)
+bones/1/rotation = Quaternion(-0.0027929894, 0.00032375456, -0.118527904, 0.99294674)
+bones/2/rotation = Quaternion(-0.005993604, 0.00042506176, 0.045065604, 0.99896604)
+bones/3/rotation = Quaternion(-0.005920039, 0.0011532666, 0.11009578, 0.9939027)
+bones/4/rotation = Quaternion(-0.005670511, 0.002020633, 0.06599819, 0.99780166)
+bones/5/rotation = Quaternion(-0.005487077, 0.002302399, 0.02089795, 0.99976397)
+bones/6/rotation = Quaternion(-0.00088775135, -0.0036155018, -0.2499414, 0.9682539)
+bones/7/rotation = Quaternion(-0.00023446207, -0.003575322, -0.027723646, 0.9996093)
+bones/8/rotation = Quaternion(-0.0052505047, -0.02301216, 0.12527244, 0.9918416)
+bones/12/rotation = Quaternion(-0.0066280477, 0.7600117, 0.016630499, 0.6496628)
+bones/13/rotation = Quaternion(-0.23096393, 0.48329163, 0.1661664, 0.82793343)
+bones/14/rotation = Quaternion(0.2852889, -0.029884545, -0.08363962, 0.95431733)
+bones/23/rotation = Quaternion(-0.42101187, 0.13079138, -0.0349398, 0.89689577)
+bones/59/rotation = Quaternion(0.76294816, -0.0006830097, -0.6457717, 0.02981135)
+bones/60/rotation = Quaternion(-0.08433378, 0.5070149, 0.058425944, 0.85580975)
+bones/61/rotation = Quaternion(0.25386816, 0.031082332, -0.14092366, 0.9564128)
+bones/70/rotation = Quaternion(-0.4774954, 0.0230514, -0.022151696, 0.87805253)
+bones/106/rotation = Quaternion(-0.013087741, 0.091494955, 0.99565804, -0.011070213)
+bones/107/rotation = Quaternion(0.0036125858, -0.005117547, -0.13473429, 0.990862)
+bones/108/rotation = Quaternion(0.04895336, -0.0049549304, 0.15592751, 0.98654234)
+bones/129/rotation = Quaternion(0.12790544, -0.10462364, 0.10114211, 0.9810527)
+bones/130/rotation = Quaternion(-0.00480284, -0.0017581269, -0.06667959, 0.9977614)
+bones/131/rotation = Quaternion(-0.11541779, 0.10952817, 0.061967142, 0.9853134)
 
 [node name="inventoryTimer" type="CanvasLayer" parent="." unique_id=2130108570]
+
+[node name="Cauldron" type="Panel" parent="inventoryTimer" unique_id=432923584]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1tb08")
+
+[node name="MarCon" type="MarginContainer" parent="inventoryTimer/Cauldron" unique_id=1548865089]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -238.0
+offset_right = 238.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 51
+
+[node name="PotUIBG" type="TextureRect" parent="inventoryTimer/Cauldron/MarCon" unique_id=2136251]
+layout_mode = 2
+texture = ExtResource("7_vheb2")
+
+[node name="MarCon" type="MarginContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG" unique_id=119146042]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -142.5
+offset_right = 284.0
+offset_bottom = 142.5
+grow_vertical = 2
+theme_override_constants/margin_left = 56
+
+[node name="Slots" type="TextureRect" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon" unique_id=1893586961]
+layout_mode = 2
+texture = ExtResource("8_3sorl")
+
+[node name="MarCon" type="MarginContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots" unique_id=1314267694]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -119.5
+offset_right = 86.0
+offset_bottom = 119.5
+grow_vertical = 2
+theme_override_constants/margin_left = 21
+
+[node name="GridContainer2" type="GridContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon" unique_id=2111656571]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/v_separation = 113
+
+[node name="IngSlot1" type="Panel" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2" unique_id=1616526893]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+script = ExtResource("6_5bn4p")
+
+[node name="Icon" type="TextureRect" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1" unique_id=1489069083]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -32.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="IngSlot2" type="Panel" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2" unique_id=1506850519]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+script = ExtResource("6_5bn4p")
+
+[node name="Icon" type="TextureRect" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot2" unique_id=1340589910]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -32.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="MarCon2" type="MarginContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots" unique_id=1520018632]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -32.5
+offset_bottom = 32.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 32
+
+[node name="PotionSlot" type="Panel" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon2" unique_id=1508218864]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon2/PotionSlot" unique_id=1840818303]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -32.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Drink" type="MarginContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG" unique_id=924060426]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -231.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 54
+theme_override_constants/margin_right = 45
+
+[node name="DrinkButton" type="TextureButton" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/Drink" unique_id=1918132102]
+layout_mode = 2
+texture_normal = ExtResource("9_7c3rw")
+texture_pressed = ExtResource("9_7c3rw")
+texture_hover = ExtResource("10_mrev8")
+
+[node name="Label" type="Label" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/Drink/DrinkButton" unique_id=59846257]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -11.0
+offset_right = 36.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.654902, 0.64705884, 0.5137255, 1)
+theme_override_fonts/font = ExtResource("11_rya6j")
+theme_override_font_sizes/font_size = 23
+text = "DRINK"
+
+[node name="Create" type="MarginContainer" parent="inventoryTimer/Cauldron/MarCon/PotUIBG" unique_id=518667008]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -124.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 54
+
+[node name="CreateButton" type="TextureButton" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/Create" unique_id=633513807]
+layout_mode = 2
+texture_normal = ExtResource("9_7c3rw")
+texture_pressed = ExtResource("9_7c3rw")
+texture_hover = ExtResource("10_mrev8")
+
+[node name="Label" type="Label" parent="inventoryTimer/Cauldron/MarCon/PotUIBG/Create/CreateButton" unique_id=222206174]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -7.5
+offset_right = 30.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.654902, 0.64705884, 0.5137255, 1)
+theme_override_fonts/font = ExtResource("11_rya6j")
+theme_override_font_sizes/font_size = 23
+text = "CREATE"
 
 [node name="Inventory" type="Panel" parent="inventoryTimer" unique_id=756827647]
 anchors_preset = 7
@@ -221,7 +438,6 @@ autostart = true
 
 [node name="main theme" type="AudioStreamPlayer" parent="." unique_id=1894578561]
 stream = ExtResource("7_pg4io")
-volume_db = -8.0
 autoplay = true
 bus = &"Music"
 
@@ -453,6 +669,11 @@ spot_angle_attenuation = 0.3660217
 [node name="castle_lineart" parent="." unique_id=1352450050 instance=ExtResource("24_8rnep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, -0.045, -0.065)
 
+[node name="PauseMenu" parent="." unique_id=939943146 instance=ExtResource("30_3sorl")]
+visible = false
+
+[connection signal="pressed" from="inventoryTimer/Cauldron/MarCon/PotUIBG/Drink/DrinkButton" to="Cauldron" method="_on_drink_button_pressed"]
+[connection signal="pressed" from="inventoryTimer/Cauldron/MarCon/PotUIBG/Create/CreateButton" to="Cauldron" method="_on_create_button_pressed"]
 [connection signal="timeout" from="inventoryTimer/Timer/MarginContainer/TextureRect/Timer" to="inventoryTimer/Timer" method="_on_timer_timeout"]
 
 [editable path="player"]

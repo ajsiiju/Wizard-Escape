@@ -2,7 +2,11 @@ extends Node3D
 
 @export var item: ItemData
 const INGREDIENT = preload("uid://bhamlfimdgmnn")
-var position_ingredient := [Vector3(0.399, 0.983, 3.428), Vector3(8.36, 0.724, -4.236), Vector3(-13.787, 1.097, 0.259), Vector3(-4.072, 0.045, -4.002), Vector3(7.466, 0.551, 4.773)]
+#var position_ingredient := [Vector3(4.94, 0.606, 2.848), Vector3(8.546, 0.744, -4.099), Vector3(0.217, 0.946, 3.662), Vector3(-0.067, 1.246, -2.7), Vector3(3.166, 0.071, -1.471), Vector3(-5.047, 0.514, -3.465), Vector3(-7.421, 0.605, 4.185), Vector3(-5.627, 1.023, 6.914), Vector3(-2.472, 0.917, 4.002), Vector3(-13.746, 1.077, 1.562), Vector3(-9.315, 0.918, 4.14), Vector3(-9.983, 1.264, -2.954)]
+
+#FOR TESTS
+var position_ingredient := [Vector3(-5.487, 0.0, -1.127), Vector3(-4.711, 0.0, -1.127), Vector3(-3.844, 0.0, -1.127)]
+
 var ingredient := ["res://Scripts/Recource/eye.tres", "res://Scripts/Recource/frog_leg.tres", "res://Scripts/Recource/herb.tres"]
 var rng := RandomNumberGenerator.new()
 
