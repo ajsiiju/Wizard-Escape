@@ -44,6 +44,27 @@ material = SubResource("StandardMaterial3D_h8o5g")
 radius = 0.05
 height = 0.1
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_it5qe"]
+emission_shape_scale = Vector3(0.13, 0.145, 0.11)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 18.792
+initial_velocity_min = 0.29999998
+initial_velocity_max = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11340"]
+albedo_color = Color(0.8661923, 0.1315229, 0, 1)
+emission_enabled = true
+emission = Color(0.99588925, 0.8774522, 0.82967013, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_kpobb"]
+material = SubResource("StandardMaterial3D_11340")
+radius = 0.02
+height = 0.04
+radial_segments = 4
+rings = 1
+
 [node name="Cauldron" type="Node3D" unique_id=375647157]
 script = ExtResource("3_it5qe")
 
@@ -79,6 +100,7 @@ visible = false
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1488792080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1058469, 0)
 light_color = Color(0.3929598, 0.6864481, 0.28172913, 1)
+light_energy = 3.0
 light_size = 0.166
 light_specular = 0.0
 
@@ -92,6 +114,23 @@ draw_pass_1 = SubResource("SphereMesh_qspni")
 [node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=654332674]
 stream = ExtResource("6_it5qe")
 bus = &"SoundFx"
+
+[node name="FireParticles" type="GPUParticles3D" parent="." unique_id=342044335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016400754, 0)
+visible = false
+amount = 56
+lifetime = 0.71
+process_material = SubResource("ParticleProcessMaterial_it5qe")
+draw_pass_1 = SubResource("SphereMesh_kpobb")
+
+[node name="FireLight" type="OmniLight3D" parent="." unique_id=1542992150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19621605, 0)
+light_color = Color(0.9010493, 0.30085042, 0.20198178, 1)
+light_energy = 9.709
+light_size = 0.166
+light_specular = 0.0
+omni_range = 0.462
+omni_attenuation = 1.968
 
 [connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

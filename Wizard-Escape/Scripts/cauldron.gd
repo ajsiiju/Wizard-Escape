@@ -2,6 +2,8 @@ extends Node3D
 
 var is_open: bool = false
 
+var player_position := Vector3()
+
 @onready var cauldron_ui : Panel = get_parent().get_node("inventoryTimer/Cauldron")
 @onready var ing_slot_1: Panel = get_parent().get_node("inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1")
 @onready var ing_slot_1_icon: TextureRect = get_parent().get_node("inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1/Icon")
@@ -56,6 +58,14 @@ func _on_drink_button_pressed() -> void:
 		is_open = false
 		potion_drunk.emit()
 		potion_effect.emit(which_potion)
+		
+		player_position = $"../player".position
+		$"../player".position = Vector3(-3.163, 0.294, -7.252)
+		remove_highlight()
+		get_tree().paused = true
+		$"../inventoryTimer".visible = false
+		$"../Cutscenes/CSCamera".make_current()
+		$"../Cutscenes/CSPLayer".play("CS_drinking_potion_blue")
 
 
 func _on_create_button_pressed() -> void:
@@ -107,3 +117,12 @@ func _on_interactable_interacted(interactor: Interactor) -> void:
 
 func _on_interactable_unfocused(interactor: Interactor) -> void:
 	remove_highlight()
+
+
+
+func _on_csp_layer_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "CS_drinking_potion_blue":
+		$"../player".position = player_position
+		get_tree().paused = false
+		$"../inventoryTimer".visible = true
+		$"../player/CameraRig/Camera3D".make_current()
