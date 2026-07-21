@@ -37,6 +37,111 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:chest_001": {
+"generate/physics": true
+},
+"PATH:chest_002": {
+"generate/physics": true
+},
+"PATH:chest_003": {
+"generate/physics": true
+},
+"PATH:dzban": {
+"generate/physics": true
+},
+"PATH:dzban i rulony_001": {
+"generate/physics": true
+},
+"PATH:floor": {
+"generate/physics": true
+},
+"PATH:krzeslo_001": {
+"generate/physics": true
+},
+"PATH:krzeslo_002": {
+"generate/physics": true
+},
+"PATH:krzeslo_003": {
+"generate/physics": true
+},
+"PATH:lustro": {
+"generate/physics": true
+},
+"PATH:lustro_001": {
+"generate/physics": true
+},
+"PATH:oltarz": {
+"generate/physics": true
+},
+"PATH:prycza": {
+"generate/physics": true
+},
+"PATH:prycza_001": {
+"generate/physics": true
+},
+"PATH:prycza_002": {
+"generate/physics": true
+},
+"PATH:prycza_003": {
+"generate/physics": true
+},
+"PATH:rulony_002": {
+"generate/physics": true
+},
+"PATH:rulony_003": {
+"generate/physics": true
+},
+"PATH:shelf_002": {
+"generate/physics": true
+},
+"PATH:shelf_003": {
+"generate/physics": true
+},
+"PATH:shelf_004": {
+"generate/physics": true
+},
+"PATH:shelf_005": {
+"generate/physics": true
+},
+"PATH:shelf_006": {
+"generate/physics": true
+},
+"PATH:shelf_007": {
+"generate/physics": true
+},
+"PATH:szafa": {
+"generate/physics": true
+},
+"PATH:szafa_001": {
+"generate/physics": true
+},
+"PATH:szafa_003": {
+"generate/physics": true
+},
+"PATH:table top": {
+"generate/physics": true
+},
+"PATH:table top_001": {
+"generate/physics": true
+},
+"PATH:taboret": {
+"generate/physics": true
+},
+"PATH:taboret_001": {
+"generate/physics": true
+},
+"PATH:taboret_002": {
+"generate/physics": true
+},
+"PATH:torture table": {
+"generate/physics": true
+},
+"PATH:walls": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

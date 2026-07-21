@@ -36,15 +36,18 @@ func _physics_process(delta: float) -> void:
 	if Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
 		anim_tree.set("parameters/movement/transition_request", "idle")
 
+
 func turn_to(direction: Vector3) -> void:
 	if  direction:
 		var yaw:= atan2(-direction.x, -direction.z)
 		yaw = lerp_angle(rotation.y, yaw, 0.15)
 		rotation.y = yaw
 
+
 func _on_ingredient_picked(picked_item: ItemData) -> void:
-	#make the animation work
+	#make the animation work TODO
 	anim_tree.set("parameters/movement/transition_request", "picking_item")
+
 
 func _on_potion_effect(which_potion:String) -> void:
 	if which_potion == "pink_potion":

@@ -2,8 +2,6 @@ extends Node3D
 
 var is_open: bool = false
 
-var player_position := Vector3()
-
 @onready var cauldron_ui : Panel = get_parent().get_node("inventoryTimer/Cauldron")
 @onready var ing_slot_1: Panel = get_parent().get_node("inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1")
 @onready var ing_slot_1_icon: TextureRect = get_parent().get_node("inventoryTimer/Cauldron/MarCon/PotUIBG/MarCon/Slots/MarCon/GridContainer2/IngSlot1/Icon")
@@ -15,19 +13,25 @@ var player_position := Vector3()
 @export var item: ItemData
 @onready var cauldron_normal: Node3D = $RigidBody3D/cauldron_normal
 @onready var cauldron_hover: Node3D = $RigidBody3D/cauldron_hover
+@onready var big_bubbles_particles: GPUParticles3D = $BigBubblesParticles
+@onready var small_bubbles_particles: GPUParticles3D = $SmallBubblesParticles
+@onready var blue_highlight := preload("res://Scripts/Recource/object_highlight.tres")
+@onready var black_highlight := preload("res://Scripts/Recource/object_highlight_black.tres")
+
 
 @onready var timer := get_parent().get_node("inventoryTimer/Timer")
 var yellow_potion := preload("res://UI/yellow_potion.png")
 var pink_potion := preload("res://UI/pink_potion.png")
 var blue_potion := preload("res://UI/blue_potion.png")
 var which_potion := ""
+
 signal potion_drunk()
 signal potion_effect(which_potion: String)
 
 
 func _ready() -> void:
 	$".".potion_effect.connect(get_node("../player")._on_potion_effect)
-	timer.end_cutscene.connect(end_cutscene)
+	timer.end_cutscene.connect(_on_end_cutscene)
 
 func open() -> void:
 	if is_open == false:
@@ -42,14 +46,16 @@ func open() -> void:
 func add_highlight() -> void:
 	cauldron_hover.visible = true
 	cauldron_normal.visible = false
-	
+	big_bubbles_particles.material_overlay = blue_highlight
+	small_bubbles_particles.material_overlay = blue_highlight
 
 func remove_highlight() -> void:
 	cauldron_normal.visible = true
 	cauldron_hover.visible = false
+	big_bubbles_particles.material_overlay = black_highlight
+	small_bubbles_particles.material_overlay = black_highlight
 
 func _on_drink_button_pressed() -> void:
-	#runs the cinematic with drinking
 	if potion_slot.texture != null:
 		$UIClick.play()
 		potion_slot.texture = null
@@ -58,14 +64,6 @@ func _on_drink_button_pressed() -> void:
 		is_open = false
 		potion_drunk.emit()
 		potion_effect.emit(which_potion)
-		
-		player_position = $"../player".position
-		$"../player".position = Vector3(-3.163, 0.294, -7.252)
-		remove_highlight()
-		get_tree().paused = true
-		$"../inventoryTimer".visible = false
-		$"../Cutscenes/CSCamera".make_current()
-		$"../Cutscenes/CSPLayer".play("CS_drinking_potion_blue")
 
 
 func _on_create_button_pressed() -> void:
@@ -98,7 +96,7 @@ func _on_create_button_pressed() -> void:
 		ing_slot_2_icon.texture = null
 		which_potion = "yellow_potion"
 
-func end_cutscene() -> void:
+func _on_end_cutscene() -> void:
 	if which_potion == "yellow_potion":
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	if which_potion == "pink_potion":
@@ -117,12 +115,3 @@ func _on_interactable_interacted(interactor: Interactor) -> void:
 
 func _on_interactable_unfocused(interactor: Interactor) -> void:
 	remove_highlight()
-
-
-
-func _on_csp_layer_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "CS_drinking_potion_blue":
-		$"../player".position = player_position
-		get_tree().paused = false
-		$"../inventoryTimer".visible = true
-		$"../player/CameraRig/Camera3D".make_current()

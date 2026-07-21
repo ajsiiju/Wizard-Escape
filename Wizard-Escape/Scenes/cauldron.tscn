@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://b6vtcjwjr2i7r" path="res://Audio/SFX_Pot_Bubbling_Loop.wav" id="1_2rulr"]
 [ext_resource type="Script" uid="uid://ccodf4n8l6ska" path="res://Scripts/cauldron.gd" id="3_it5qe"]
+[ext_resource type="Material" uid="uid://tueysrf0qnbt" path="res://Scripts/Recource/object_highlight_black.tres" id="6_11340"]
 [ext_resource type="AudioStream" uid="uid://dxis1txvvdoh6" path="res://Audio/SFX_UI_Menu_EnterGame_01.wav" id="6_it5qe"]
 [ext_resource type="PackedScene" uid="uid://40mofbykvhxv" path="res://Scenes/interactable.tscn" id="10_oiwvb"]
 [ext_resource type="PackedScene" uid="uid://choscmn38jbf0" path="res://Meshes/lineart/cauldron_hover.glb" id="12_axbx3"]
@@ -43,6 +44,36 @@ emission = Color(0.2847746, 0.66233194, 3.85046e-07, 1)
 material = SubResource("StandardMaterial3D_h8o5g")
 radius = 0.05
 height = 0.1
+
+[sub_resource type="Curve" id="Curve_kpobb"]
+_data = [Vector2(0, 0.5883669), 0.0, 0.0, 0, 0, Vector2(0.1804124, 1), 0.0, 0.0, 0, 0, Vector2(0.36082476, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_v2jri"]
+curve = SubResource("Curve_kpobb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oiwvb"]
+emission_shape_scale = Vector3(0.197, 0, 0.197)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.25
+initial_velocity_max = 0.25
+gravity = Vector3(0, -2.48, 0)
+linear_accel_min = 1.9999977
+linear_accel_max = 1.9999977
+scale_curve = SubResource("CurveTexture_v2jri")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhwwe"]
+albedo_color = Color(0.12524706, 0.7398373, 5.7756904e-07, 1)
+emission_enabled = true
+emission = Color(0.22664666, 0.5373395, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_sg3l0"]
+material = SubResource("StandardMaterial3D_uhwwe")
+radius = 0.03
+height = 0.08
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_it5qe"]
 emission_shape_scale = Vector3(0.13, 0.145, 0.11)
@@ -104,12 +135,21 @@ light_energy = 3.0
 light_size = 0.166
 light_specular = 0.0
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=142245927]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9924073, 0)
+[node name="BigBubblesParticles" type="GPUParticles3D" parent="." unique_id=142245927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0778378, 0)
+material_overlay = ExtResource("6_11340")
 amount = 4
 lifetime = 3.5
 process_material = SubResource("ParticleProcessMaterial_axbx3")
 draw_pass_1 = SubResource("SphereMesh_qspni")
+
+[node name="SmallBubblesParticles" type="GPUParticles3D" parent="." unique_id=1019390892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92484486, 0)
+material_overlay = ExtResource("6_11340")
+amount = 51
+lifetime = 1.87
+process_material = SubResource("ParticleProcessMaterial_oiwvb")
+draw_pass_1 = SubResource("SphereMesh_sg3l0")
 
 [node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=654332674]
 stream = ExtResource("6_it5qe")

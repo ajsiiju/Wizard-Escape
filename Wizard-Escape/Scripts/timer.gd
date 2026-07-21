@@ -8,12 +8,14 @@ signal end_cutscene()
 func _ready() -> void:
 	cauldron.potion_drunk.connect(_on_potion_drunk)
 
+
 func _on_timer_timeout() -> void:
 	if timer.value <= 0:
 		end_cutscene.emit()
 	else:
 		active_tween = create_tween()
 		active_tween.tween_property(timer, "value", timer.value - 1, 1.0).set_trans(Tween.TRANS_LINEAR)
+
 
 func _on_potion_drunk() -> void:
 	if timer.value > 5:

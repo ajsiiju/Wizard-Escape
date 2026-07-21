@@ -14,17 +14,10 @@
 texture = ExtResource("1_28flt")
 modulate_color = Color(0.17176259, 0.14506295, 0.14160743, 1)
 
-[node name="MainMenu" type="Control" unique_id=682734391]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MainMenu" type="CanvasLayer" unique_id=1554149944]
 script = ExtResource("1_ce3w2")
 
 [node name="Panel" type="Panel" parent="." unique_id=1141803948]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,7 +26,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_n45e2")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1395683698]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
