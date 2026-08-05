@@ -147,5 +147,16 @@ bus = &"Music"
 stream = ExtResource("8_yhxw7")
 bus = &"SoundFx"
 
+[node name="BlackScreen" type="CanvasLayer" parent="." unique_id=1900844044]
+
+[node name="ColorRect" type="ColorRect" parent="BlackScreen" unique_id=671102608]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/MarginContainer3/QuitButton" to="." method="_on_quit_button_pressed"]

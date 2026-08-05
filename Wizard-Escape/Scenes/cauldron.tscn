@@ -136,6 +136,7 @@ light_size = 0.166
 light_specular = 0.0
 
 [node name="BigBubblesParticles" type="GPUParticles3D" parent="." unique_id=142245927]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0778378, 0)
 material_overlay = ExtResource("6_11340")
 amount = 4
@@ -144,6 +145,7 @@ process_material = SubResource("ParticleProcessMaterial_axbx3")
 draw_pass_1 = SubResource("SphereMesh_qspni")
 
 [node name="SmallBubblesParticles" type="GPUParticles3D" parent="." unique_id=1019390892]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92484486, 0)
 material_overlay = ExtResource("6_11340")
 amount = 51
@@ -152,6 +154,7 @@ process_material = SubResource("ParticleProcessMaterial_oiwvb")
 draw_pass_1 = SubResource("SphereMesh_sg3l0")
 
 [node name="UIClick" type="AudioStreamPlayer" parent="." unique_id=654332674]
+process_mode = 3
 stream = ExtResource("6_it5qe")
 bus = &"SoundFx"
 
