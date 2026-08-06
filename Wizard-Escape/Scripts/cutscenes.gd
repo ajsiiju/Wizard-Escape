@@ -16,6 +16,11 @@ var player_position := Vector3()
 
 @onready var timer: Panel = $"../inventoryTimer/Timer"
 
+@onready var pink_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/pink_potion
+@onready var blue_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/blue_potion
+@onready var yellow_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/yellow_potion
+
+
 
 func _ready() -> void:
 	cauldron.potion_drunk.connect(_on_potion_drunk)
@@ -37,7 +42,16 @@ func _on_potion_drunk() -> void:
 	get_tree().paused = true
 	ui.visible = false
 	cs_camera.make_current()
-	cs_player.play("CS_drinking_potion_blue")
+	cs_player.play("CS_drinking_potion")
+	
+	if cauldron.which_potion == "blue_potion":
+		blue_potion.visible = true
+	
+	if cauldron.which_potion == "yellow_potion":
+		yellow_potion.visible = true
+	
+	if cauldron.which_potion == "pink_potion":
+		pink_potion.visible = true
 
 
 
@@ -70,13 +84,16 @@ func _on_end_cutscene(which_potion: String) -> void:
 
 # WHEN CUTSCENE IS FINISHED
 func _on_cs_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "CS_drinking_potion_blue":
+	if anim_name == "CS_drinking_potion":
 		player.position = player_position
 		cs_character.position = Vector3(-3.163, 0.294, -6.411)
 		get_tree().paused = false
 		ui.visible = true
 		fade_out.visible = false
 		player_camera.make_current()
+		blue_potion.visible = false
+		pink_potion.visible = false
+		yellow_potion.visible = false
 	
 	if anim_name == "CS_right_potion":
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

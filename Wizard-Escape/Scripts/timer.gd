@@ -8,6 +8,7 @@ var active_tween := create_tween()
 signal end_cutscene(which_potion: String)
 
 var timer_length := 57
+#var timer_length := 1
 
 
 func _ready() -> void:
