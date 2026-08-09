@@ -10,10 +10,11 @@ var camera_rig_height:float = position.y
 
 func _ready() -> void:
 	spring_length = 1.5
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 
 func _process(delta: float) -> void:
-	if Input.mouse_mode != Input.MOUSE_MODE_CONFINED:
+	if Input.mouse_mode != Input.MOUSE_MODE_CONFINED and Input.mouse_mode != Input.MOUSE_MODE_CONFINED_HIDDEN:
 		var look_input:= Input.get_vector("view_right", "view_left", "view_down", "view_up")
 		look_input = turn_rate * look_input * delta
 		look_input += mouse_input

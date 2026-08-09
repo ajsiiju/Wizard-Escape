@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Wizard Escape"
 run/main_scene="uid://cv6t14uohxbbp"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://b8t6nawc86clq"
 
 [audio]
@@ -26,6 +27,7 @@ buses/default_bus_layout="uid://ifqkdveyuwjp"
 [autoload]
 
 Autoload="*uid://keq6n5rmydrv"
+TransitionScreen="*uid://bkr5fndijj8s3"
 
 [debug]
 
@@ -104,3 +106,7 @@ skip={
 [layer_names]
 
 3d_physics/layer_2="interactable"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.22094142, 0.22094142, 0.2209414, 1)

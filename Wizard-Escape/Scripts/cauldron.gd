@@ -17,6 +17,9 @@ var is_open: bool = false
 @onready var small_bubbles_particles: GPUParticles3D = $SmallBubblesParticles
 @onready var blue_highlight := preload("res://Scripts/Recource/object_highlight.tres")
 @onready var black_highlight := preload("res://Scripts/Recource/object_highlight_black.tres")
+@onready var key_UI: Panel = $Key
+
+
 
 
 @onready var timer := get_parent().get_node("inventoryTimer/Timer")
@@ -48,12 +51,14 @@ func add_highlight() -> void:
 	cauldron_normal.visible = false
 	big_bubbles_particles.material_overlay = blue_highlight
 	small_bubbles_particles.material_overlay = blue_highlight
+	key_UI.visible = true
 
 func remove_highlight() -> void:
 	cauldron_normal.visible = true
 	cauldron_hover.visible = false
 	big_bubbles_particles.material_overlay = black_highlight
 	small_bubbles_particles.material_overlay = black_highlight
+	key_UI.visible = false
 
 
 func _on_drink_button_pressed() -> void:

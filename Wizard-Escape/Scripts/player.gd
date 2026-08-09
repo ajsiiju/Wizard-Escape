@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.mouse_mode != Input.MOUSE_MODE_CONFINED:
+	if Input.mouse_mode != Input.MOUSE_MODE_CONFINED and Input.mouse_mode != Input.MOUSE_MODE_CONFINED_HIDDEN:
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 		var direction := (camera.global_basis * Vector3(input_dir.x, 0, input_dir.y))
 		direction = Vector3(direction.x, 0, direction.z).normalized() * input_dir.length()
@@ -35,6 +35,10 @@ func _physics_process(delta: float) -> void:
 		anim_tree.set("parameters/movement/transition_request", "idle")
 	if Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
 		anim_tree.set("parameters/movement/transition_request", "idle")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		anim_tree.set("parameters/movement/transition_request", "pick_up")
 
 
 func turn_to(direction: Vector3) -> void:

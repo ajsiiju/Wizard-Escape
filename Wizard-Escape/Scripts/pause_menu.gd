@@ -1,5 +1,7 @@
 extends CanvasLayer
 @onready var cauldron: Node3D = $"../Cauldron"
+@onready var button_mashing: Panel = $"../inventoryTimer/ButtonMashing"
+
 @onready var is_pause_menu_visible := false 
 
 
@@ -14,8 +16,14 @@ func _input(event: InputEvent) -> void:
 		elif is_pause_menu_visible == true:
 			$MainMenuTheme.stop()
 			$".".visible = false
-			if cauldron.is_open == false:
+			
+			if cauldron.is_open == true:
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			if button_mashing.button_mashing_active == true:
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+			if cauldron.is_open == false and button_mashing.button_mashing_active == false:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 			get_tree().paused = false
 			is_pause_menu_visible = false
 
@@ -25,8 +33,14 @@ func _on_return_button_pressed() -> void:
 	$MainMenuTheme.stop()
 	$".".visible = false
 	is_pause_menu_visible = false
-	if cauldron.is_open == false:
+	
+	if cauldron.is_open == true:
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	if button_mashing.button_mashing_active == true:
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	if cauldron.is_open == false and button_mashing.button_mashing_active == false:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	get_tree().paused = false
 
 

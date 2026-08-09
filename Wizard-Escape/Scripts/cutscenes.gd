@@ -8,6 +8,8 @@ var player_position := Vector3()
 
 @onready var cauldron: Node3D = $"../Cauldron"
 @onready var ui: CanvasLayer = $"../inventoryTimer"
+@onready var cutscenes_UI: CanvasLayer = $Cutscenes_UI
+
 
 
 @onready var cs_player: AnimationPlayer = $CSPLayer
@@ -19,6 +21,9 @@ var player_position := Vector3()
 @onready var pink_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/pink_potion
 @onready var blue_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/blue_potion
 @onready var yellow_potion: Node3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/yellow_potion
+@onready var yellow_light: OmniLight3D = $CSCharacter/root/Skeleton3D/BoneAttachment3D/YellowLight
+@onready var yellow_light_2: OmniLight3D = $"../player/Mesh/root/Skeleton3D/BoneAttachment3D/YellowLight2"
+
 
 
 
@@ -32,16 +37,18 @@ func _input(event: InputEvent) -> void:
 		var time_left := cs_player.current_animation_length - cs_player.current_animation_position
 		cs_player.advance(time_left)
 
+func cutscene_settings() -> void:
+	player.position = Vector3(-3.163, 0.294, -7.252)
+	ui.visible = false
+	cs_camera.make_current()
 
 
 # START DRINKING CUTSCENE
 func _on_potion_drunk() -> void:
 	player_position = player.position
-	player.position = Vector3(-3.163, 0.294, -7.252)
+	cutscene_settings()
 	cauldron.remove_highlight()
 	get_tree().paused = true
-	ui.visible = false
-	cs_camera.make_current()
 	cs_player.play("CS_drinking_potion")
 	
 	if cauldron.which_potion == "blue_potion":
@@ -58,28 +65,23 @@ func _on_potion_drunk() -> void:
 	# START ENDING CUTSCENE
 func _on_end_cutscene(which_potion: String) -> void:
 	if which_potion == "yellow_potion":
-		player.position = Vector3(-3.163, 0.294, -7.252)
-		ui.visible = false
-		cs_camera.make_current()
+		cutscene_settings()
+		yellow_light.visible = true
 		cs_player.play("CS_right_potion")
 	
 	if which_potion == "pink_potion":
-		player.position = Vector3(-3.163, 0.294, -7.252)
-		ui.visible = false
-		cs_camera.make_current()
+		cutscene_settings()
 		cs_player.play("CS_fast_potion")
 	
 	if which_potion == "blue_potion":
-		player.position = Vector3(-3.163, 0.294, -7.252)
-		ui.visible = false
-		cs_camera.make_current()
+		cutscene_settings()
 		cs_player.play("CS_slow_potion")
+		
 	
 	if which_potion == "no_potion":
-		player.position = Vector3(-3.163, 0.294, -7.252)
-		ui.visible = false
-		cs_camera.make_current()
+		cutscene_settings()
 		cs_player.play("CS_no_potion")
+
 
 
 # WHEN CUTSCENE IS FINISHED
@@ -94,6 +96,8 @@ func _on_cs_player_animation_finished(anim_name: StringName) -> void:
 		blue_potion.visible = false
 		pink_potion.visible = false
 		yellow_potion.visible = false
+		cutscenes_UI.visible = false
+		yellow_light_2.visible = true
 	
 	if anim_name == "CS_right_potion":
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
