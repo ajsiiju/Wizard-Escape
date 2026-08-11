@@ -97,7 +97,8 @@ func _on_cs_player_animation_finished(anim_name: StringName) -> void:
 		pink_potion.visible = false
 		yellow_potion.visible = false
 		cutscenes_UI.visible = false
-		yellow_light_2.visible = true
+		if cauldron.which_potion == "yellow_potion":
+			yellow_light_2.visible = true
 	
 	if anim_name == "CS_right_potion":
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

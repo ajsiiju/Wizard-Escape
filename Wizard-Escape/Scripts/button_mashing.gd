@@ -18,7 +18,9 @@ extends Panel
 
 
 
-@onready var anim_player: AnimationPlayer = $"../../WriglingChair/AN_krzeslo_anim_lew_praw/AnimationPlayer"
+
+@onready var chair_anim: AnimationTree = $"../../WriglingChair/ChairAnimTree"
+
 @onready var anim_timer: Timer = $"../../WriglingChair/AnimTimer"
 @onready var anim_key: AnimationPlayer = $"../Key/AnimKey"
 
@@ -27,6 +29,7 @@ extends Panel
 
 var button_mashing_active := true
 var last_button_pressed := "A"
+var chair_anim_is_playing := false
 
 
 func _ready() -> void:
@@ -42,16 +45,16 @@ func _input(event: InputEvent) -> void:
 		progress_bar_button_mashing.value += 1
 		check_win()
 		anim_timer.start()
-		if !anim_player.is_playing():
-			anim_player.play("lewo")
+		if chair_anim_is_playing == false:
+			chair_anim_is_playing = true
 	
 	if event.is_action_pressed("move_right") and last_button_pressed == "A" and button_mashing_active == true:
 		last_button_pressed = "D"
 		progress_bar_button_mashing.value += 1
 		check_win()
 		anim_timer.start()
-		if !anim_player.is_playing():
-			anim_player.play("lewo")
+		if chair_anim_is_playing == false:
+			chair_anim_is_playing = true
 
 
 func _on_timer_timeout() -> void:
@@ -74,4 +77,4 @@ func check_win() -> void:
 
 
 func _on_anim_timer_timeout() -> void:
-	anim_player.stop()
+	chair_anim_is_playing = false

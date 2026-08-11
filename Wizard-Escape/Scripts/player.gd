@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 @onready var anim_player: AnimationPlayer = $Mesh/AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
 
+
 func _physics_process(delta: float) -> void:
 	 #Add the gravity.
 	if not is_on_floor():
@@ -25,20 +26,20 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		turn_to(direction)
 	
+	
+	
 	#MOVEMENT ANIMATION
 	var current_speed := velocity.length()
 	if current_speed > 1:
-		#anim_player.play("base/run")
 		anim_tree.set("parameters/movement/transition_request", "run")
 	else:
-		#anim_player.play("base/idle")
 		anim_tree.set("parameters/movement/transition_request", "idle")
 	if Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
 		anim_tree.set("parameters/movement/transition_request", "idle")
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		anim_tree.set("parameters/movement/transition_request", "pick_up")
+func _on_ingredient_picked(picked_item: ItemData) -> void:
+	anim_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
 
 
 func turn_to(direction: Vector3) -> void:
@@ -46,11 +47,6 @@ func turn_to(direction: Vector3) -> void:
 		var yaw:= atan2(-direction.x, -direction.z)
 		yaw = lerp_angle(rotation.y, yaw, 0.15)
 		rotation.y = yaw
-
-
-func _on_ingredient_picked(picked_item: ItemData) -> void:
-	#make the animation work TODO
-	anim_tree.set("parameters/movement/transition_request", "picking_item")
 
 
 func _on_potion_effect(which_potion:String) -> void:

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c51au0x84g8sm"
-path.s3tc="res://.godot/imported/AN_krzeslo_anim_lew_praw_krzeslo.png-171bf43e6c8a27c31f39aec1410e0278.s3tc.ctex"
+uid="uid://xpwddhgy20nv"
+path.s3tc="res://.godot/imported/AN_krzesła_Praw_Lew_krzeslo.png-81ba5d7f08a393a1638c1904b3ed2051.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Animations/ANIM/chair/AN_krzeslo_anim_lew_praw_krzeslo.png"
-dest_files=["res://.godot/imported/AN_krzeslo_anim_lew_praw_krzeslo.png-171bf43e6c8a27c31f39aec1410e0278.s3tc.ctex"]
+source_file="res://Animations/ANIM/chair/AN_krzesła_Praw_Lew_krzeslo.png"
+dest_files=["res://.godot/imported/AN_krzesła_Praw_Lew_krzeslo.png-81ba5d7f08a393a1638c1904b3ed2051.s3tc.ctex"]
 
 [params]
 
