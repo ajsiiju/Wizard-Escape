@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "shot_1_right-004_Basia": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/MC/chair_right_fall.anim",
+"save_to_file/fallback_path": "res://Animations/MC/chair_right_fall_v2.anim",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://clacncc8tttrj",
+"save_to_file/path": "uid://dyiw11s3t0mhj",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

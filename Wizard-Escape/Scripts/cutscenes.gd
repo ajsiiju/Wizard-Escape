@@ -100,6 +100,12 @@ func _on_cs_player_animation_finished(anim_name: StringName) -> void:
 		if cauldron.which_potion == "yellow_potion":
 			yellow_light_2.visible = true
 	
+	if anim_name == "CS_freeing":
+		ui.visible = true
+		fade_out.visible = false
+		cutscenes_UI.visible = false
+		player_camera.make_current()
+	
 	if anim_name == "CS_right_potion":
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	if anim_name == "CS_fast_potion":

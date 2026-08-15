@@ -6209,9 +6209,9 @@ _subresources={
 },
 "lewo_srodek": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Animations/chair/middle.anim",
+"save_to_file/fallback_path": "res://Animations/chair/middle_v2.anim",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://b5ktqn6hxl06b",
+"save_to_file/path": "uid://dmubl64y16hq1",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
