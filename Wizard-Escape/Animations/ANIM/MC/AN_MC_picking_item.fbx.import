@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "shot_1_pickup_item-015_Basia": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/picking_item.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://8afywa3mixra",

@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "shot_1_left-006_Basia": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/chair_left_fall.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://bby78l276j15d",

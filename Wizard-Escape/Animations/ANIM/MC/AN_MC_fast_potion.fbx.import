@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "cutscene_3-008_Basia": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/fast_potion.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://dl4rk038x3l3k",

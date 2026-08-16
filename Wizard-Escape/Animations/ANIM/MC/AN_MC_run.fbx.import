@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "root|shot_1_jog_loop-008_Basia_001": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/run.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://dypqk6u2hgnto",

@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "lewo": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/chair/idle.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://bgh4to7yk45pi",
@@ -2096,7 +2096,7 @@ _subresources={
 "slices/amount": 0
 },
 "lewo_koniec": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/chair/end.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://eqa3k33qicgx",
@@ -4152,7 +4152,7 @@ _subresources={
 "slices/amount": 0
 },
 "lewo_początek": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/chair/start.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://digw7hvssyy14",
@@ -6208,7 +6208,7 @@ _subresources={
 "slices/amount": 0
 },
 "lewo_srodek": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/chair/middle_v2.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://dmubl64y16hq1",

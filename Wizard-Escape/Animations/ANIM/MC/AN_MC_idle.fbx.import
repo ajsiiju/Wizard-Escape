@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "root|shot_1_idle-013_Michal": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/idle.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://d4avgo3x7b1qj",

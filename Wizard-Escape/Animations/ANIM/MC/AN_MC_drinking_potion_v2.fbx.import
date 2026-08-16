@@ -40,7 +40,7 @@ materials/extract_path=""
 _subresources={
 "animations": {
 "Take 001": {
-"save_to_file/enabled": true,
+"save_to_file/enabled": false,
 "save_to_file/fallback_path": "res://Animations/MC/drinking_potion_v2.anim",
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "uid://ctp36wc4dih8",
